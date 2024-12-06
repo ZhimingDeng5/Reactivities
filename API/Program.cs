@@ -1,22 +1,12 @@
+using API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+builder.Services.AddApplicationServices(builder.Configuration);
 
 // Add services to the container.
-builder.Services.AddDbContext<DataContext>(opt =>
-{
-    // 明确使用配置的连接字符串
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-builder.Services.AddCors(opt=>{
-    opt.AddPolicy("CorsPolicy",policy=>{
-        policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
-    });
-});
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
