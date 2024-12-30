@@ -22,9 +22,9 @@ namespace Application.Activities
         public class Handler:IRequestHandler<Command, Result<Unit>>
         {
             private readonly DataContext _context;
-            private readonly IuserAccessor _userAccessor;
+            private readonly IUserAccessor _userAccessor;
             
-            public Handler(DataContext Context, IuserAccessor userAccessor) {
+            public Handler(DataContext Context, IUserAccessor userAccessor) {
                 _userAccessor = userAccessor;
                 _context = Context;
 
