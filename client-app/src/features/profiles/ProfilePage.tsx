@@ -16,7 +16,6 @@ export default observer(function ProfilePage() {
     useEffect(()=>{
         if (username) {
             loadProfile(username);
-            console.log(1)
         }
     }, [loadProfile,username])
     if(loadingProfile) return <LoadingComponent content="Loading profile..." />
