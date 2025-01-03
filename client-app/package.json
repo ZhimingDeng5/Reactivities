@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@microsoft/signalr": "^8.0.7",
     "@types/react-calendar": "^3.9.0",
     "axios": "^1.7.9",
     "date-fns": "^3.6.0",
@@ -26,7 +27,7 @@
     "react-router-dom": "^7.0.2",
     "react-toastify": "^11.0.0",
     "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^3.0.0-beta.0",
+    "semantic-ui-react": "^3.0.0-beta.2",
     "uuid": "^11.0.3",
     "yup": "^1.6.1"
   },
