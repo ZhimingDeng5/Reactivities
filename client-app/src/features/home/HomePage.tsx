@@ -1,5 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
-import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Header, Segment,Image, Button } from "semantic-ui-react";
 import { useStore } from "../../app/stores/store";
 import { observer } from "mobx-react-lite";

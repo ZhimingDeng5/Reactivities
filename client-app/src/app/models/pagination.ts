@@ -1,4 +1,3 @@
-import { da } from "date-fns/locale";
 
 export interface Pagination {
     currentPage : number;

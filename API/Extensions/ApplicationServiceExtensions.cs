@@ -23,7 +23,7 @@ namespace API.Extensions
             services.AddDbContext<DataContext>(opt =>
             {
                 // 明确使用配置的连接字符串
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
             services.AddCors(opt=>{
                 opt.AddPolicy("CorsPolicy",policy=>{

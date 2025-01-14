@@ -13,6 +13,7 @@ builder.Services.AddControllers(opt=>{
     var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
     opt.Filters.Add(new AuthorizeFilter(policy));
 });
+var tokenKey = builder.Configuration["TokenKey"] ?? Environment.GetEnvironmentVariable("TokenKey");
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
@@ -31,8 +32,13 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+
 app.MapControllers();
 app.MapHub<ChatHub>("/chat");
+app.MapFallbackToController("Index","Fallback");
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
@@ -48,4 +54,5 @@ catch(Exception ex){
     Console.WriteLine($"Migration Error: {ex.Message}");
     Console.WriteLine($"Stack Trace: {ex.StackTrace}");
 }
+
 app.Run();

@@ -3,7 +3,6 @@ import ProfileHeader from "./ProfileHeader";
 import ProfileContent from "./ProfileContent";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
-import UserStore from "../../app/stores/userStore";
 import { useStore } from "../../app/stores/store";
 import { useEffect } from "react";
 import LoadingComponent from "../../app/layout/LoadingComponents";

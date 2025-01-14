@@ -20,7 +20,7 @@ export default function PhotoUploadWidget({loading,uploadPhoto}:Props) {
 
     useEffect(()=>{
         return ()=>{
-            files.forEach((file: any)=>URL.revokeObjectURL(files.preview))
+            files.forEach((_file: any)=>URL.revokeObjectURL(files.preview))
         }
     },[files])
     return (

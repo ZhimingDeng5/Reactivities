@@ -1,6 +1,5 @@
 import { makeAutoObservable, reaction } from "mobx";
 import { serverError } from "../models/serverError";
-import { tr } from "date-fns/locale";
 
 export default class CommonStore{
     error:serverError|null=null;
